@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Gibf
+module Gbif
   class Error
     HTTP_BAD_REQUEST_CODE = 400
     HTTP_UNAUTHORIZED_CODE = 401

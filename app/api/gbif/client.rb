@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Gibf
+module Gbif
   class Client
     def self.connection
       @connection ||= Faraday.new do |f|
@@ -16,7 +16,7 @@ module Gibf
       response = connection.send(http_method, endpoint, args)
       { code: response.status, status: 'Success', data: response.body }
     rescue Faraday::Error => e
-      { code: e.response[:status], status: e.message, data: Errors.map(e.response[:status]) }
+      { code: e.response[:status], status: e.message, data: Error.map(e.response[:status]) }
     end
   end
 end
