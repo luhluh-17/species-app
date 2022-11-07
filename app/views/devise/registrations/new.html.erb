@@ -19,7 +19,7 @@
   </div>
 
   <div class="field">
-    <%= f.select :role,  options_for_select(role_options), { prompt: 'Choose an occupation' } %>
+    <%= f.select :role, options_for_select(role_options), { prompt: 'Choose an occupation' } %>
     <%= f.label :role %>
   </div>
 
@@ -37,7 +37,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", data: {turbo: false} %>
   </div>
 <% end %>
 
