@@ -1,4 +1,9 @@
-<div>
-  <h1 class="font-bold text-4xl">Dashboard#index</h1>
-  <p>Find me in app/views/dashboard/index.html.erb</p>
-</div>
+<main class="p-4">
+  <%= form_with(url: root_path, method: :get) do |form| %>
+    <%= form.label :query, "Search Species", class: "block mb-2" %>
+    <div class="flex space-x-3">
+      <%= form.text_field :query, class: "py-3 px-4 rounded ring-0 focus:ring-4 focus:ring-red-100 focus:shadow-none focus:border-red-500 focus:outline-note" %>
+      <%= form.submit "Search", class: "px-4 py-3 bg-red-500 text-base font-normal text-neutral-100 rounded inline-flex items-center cursor-pointer hover:bg-red-400 focus:ring-4 ring-0 focus:ring-red-100" %>
+    </div>
+  <% end %>
+</main>
