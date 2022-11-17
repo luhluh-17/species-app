@@ -10,9 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
   <body class="flex flex-row bg-red-50">
-    <% unless current_user.nil? %>
-      <%= render 'shared/sidebar' %>
-    <% end %>
+    <%= render 'shared/sidebar' %>
     <main class="container">
       <%= yield %>
     </main>
