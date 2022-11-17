@@ -3,7 +3,13 @@
 module Gbif
   class Species
     def self.all
-      Client.call(http_method: 'get', endpoint: 'species')
+      Client.call(
+        http_method: 'get',
+        endpoint: 'species/search',
+        args: {
+          q: 'philippines'
+        }
+      )
     end
 
     def self.search(name)
