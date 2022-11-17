@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     registrations: 'user/registrations'
   }
 
+  get 'api/species', to: 'dashboard#show'
   root 'dashboard#index'
 end
