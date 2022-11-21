@@ -1,0 +1,7 @@
+<div id="<%= dom_id species %>">
+  <% if action_name != "show" %>
+    <%= link_to "View", species, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit', edit_species_path(species), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
