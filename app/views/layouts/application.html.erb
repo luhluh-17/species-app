@@ -10,9 +10,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= render 'layouts/sidebar' %>
-    <%= render 'layouts/flash' %>
-    <%= yield %>
+  <body class="flex flex-row bg-red-50">
+    <%= render 'shared/sidebar' %>
+    <main class="container">
+      <%= render 'layouts/flash' %>
+      <%= yield %>
+    </main>
   </body>
 </html>
