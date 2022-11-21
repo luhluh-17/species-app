@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def classification_formatter(*args)
-    message = 'Classification: '
+    message = 'Taxonomic Rank: '
     list = args.compact
     list.each do |c|
       message += if c == list.last
@@ -20,7 +20,7 @@ module ApplicationHelper
     if specie['vernacularNames'].empty?
       'Vernacular Name: N/A'
     else
-      specie['vernacularNames'].first['vernacularName']
+      "Vernacular Name: #{specie['vernacularNames'].first['vernacularName']}"
     end
   end
 end

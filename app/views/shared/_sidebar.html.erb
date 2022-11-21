@@ -1,23 +1,23 @@
 <aside class="h-screen w-64 bg-red-800" aria-label="Sidebar">
   <div class="h-full py-4 px-3 bg-red-50 bg-red-800">
-    <%= link_to root_path, class: "flex items-center pl-2.5 mb-5" do %>
+    <%= link_to dashboard_path, class: "flex items-center pl-2.5 mb-5" do %>
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Species</span>
     <% end %>
     <div class="sidebar-height flex flex-col justify-between">
       <ul class="space-y-2">
         <li>
-          <%= link_to root_path, class: sidebar_item_style do %>
+          <%= link_to dashboard_path, class: sidebar_item_style do %>
             <div class="flex items-center">
-              <%= render "icons/plus-circle" %>
-              <span class="ml-3">Add Entry</span>
+              <%= render "icons/dashboard" %>
+              <span class="ml-3">Dashboard</span>
             </div>
           <% end %>
         </li>
         <li>
-          <%= link_to root_path, class: sidebar_item_style do %>
+          <%= link_to new_species_path, class: sidebar_item_style do %>
             <div class="flex items-center">
-              <%= render "icons/logout" %>
-              <span class="ml-3">Sample</span>
+              <%= render "icons/plus-circle" %>
+              <span class="ml-3">Add Entry</span>
             </div>
           <% end %>
         </li>
