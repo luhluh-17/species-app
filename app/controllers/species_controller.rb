@@ -43,6 +43,7 @@ class SpeciesController < ApplicationController
   end
 
   def species_params
-    params.fetch(:species, {})
+    params.require(:species).permit(:ephitet, :name, :kingdom, :phylum, :classification, :order, :family, :location,
+                                    :description)
   end
 end
