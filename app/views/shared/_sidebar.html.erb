@@ -6,18 +6,18 @@
     <div class="sidebar-height flex flex-col justify-between">
       <ul class="space-y-2">
         <li>
-          <%= link_to root_path, class: sidebar_item_style do %>
+          <%= link_to dashboard_path, class: sidebar_item_style do %>
             <div class="flex items-center">
-              <%= render "icons/plus-circle" %>
-              <span class="ml-3">Add Entry</span>
+              <%= render "icons/dashboard" %>
+              <span class="ml-3">Dashboard</span>
             </div>
           <% end %>
         </li>
         <li>
-          <%= link_to root_path, class: sidebar_item_style do %>
+          <%= link_to new_species_path, class: sidebar_item_style do %>
             <div class="flex items-center">
-              <%= render "icons/logout" %>
-              <span class="ml-3">Sample</span>
+              <%= render "icons/plus-circle" %>
+              <span class="ml-3">Add Entry</span>
             </div>
           <% end %>
         </li>
