@@ -5,5 +5,5 @@ class Publication < ApplicationRecord
   validates :title, presence: true
   validates :summary, presence: true
   validates :url, presence: true
-  validates :publication_date, presence: true
+  validates :publiction_date, presence: true
 end

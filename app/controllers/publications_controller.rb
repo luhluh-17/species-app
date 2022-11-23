@@ -43,6 +43,6 @@ class PublicationsController < ApplicationController
   end
 
   def publication_params
-    params.permit(:title, :summary, :url, :publication_date, :species_id, :user_id)
+    params.permit(:title, :summary, :url, :publiction_date, :species_id, :user_id)
   end
 end
