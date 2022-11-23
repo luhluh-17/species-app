@@ -1,0 +1,8 @@
+<div>
+  <% species_model.galleries.each do |gallery| %>
+    <%= image_tag gallery.image %>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= gallery.description %>
+    </p>
+  <% end %>
+</div>
