@@ -1,35 +1,36 @@
-<aside class="h-screen w-64 bg-red-800" aria-label="Sidebar">
-  <div class="h-full py-4 px-3 bg-red-50 bg-red-800">
-    <%= link_to dashboard_path, class: "flex items-center pl-2.5 mb-5" do %>
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Species</span>
+<div class="flex flex-col sticky top-0 items-center w-64 h-screen overflow-hidden text-white bg-red-800 rounded">
+
+	<%= link_to dashboard_path, class: "flex items-center w-full px-3 mt-3" do %>
+      	<span class="ml-2 text-2xl font-semibold">ArkiBuhay</span>
     <% end %>
-    <div class="sidebar-height flex flex-col justify-between">
-      <ul class="space-y-2">
-        <li>
-          <%= link_to dashboard_path, class: sidebar_item_style do %>
-            <div class="flex items-center">
-              <%= render "icons/dashboard" %>
-              <span class="ml-3">Dashboard</span>
-            </div>
+
+	<div class="w-full px-2">
+		<!-- species navigation -->
+		<div class="flex flex-col items-center w-full mt-3 border-t border-white">
+			<%= link_to dashboard_path, class: sidebar_item_style do %>
+				<%= render "icons/dashboard" %>
+				<span class="ml-2 text-sm font-medium">Dashboard</span>
+          	<% end %>
+
+			<%= link_to new_species_path, class: sidebar_item_style do %>
+				<%= render "icons/plus-circle" %>
+				<span class="ml-2 text-sm font-medium">Add Entry</span>
+          	<% end %>
+		</div>
+
+		<!-- account navigation -->
+		<div class="flex flex-col items-center w-full mt-3 border-t border-white">
+			<%= link_to dashboard_path, class: sidebar_item_style do %>
+				<svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+				<span class="ml-2 text-sm font-medium">Account</span>
+          	<% end %>
+
+			<%= link_to destroy_user_session_path, class: sidebar_item_style, data: { turbo_method: :delete } do %>
+            	<%= render "icons/logout" %>
+            	<span class="ml-2 text-sm font-medium">Logout</span>
           <% end %>
-        </li>
-        <li>
-          <%= link_to new_species_path, class: sidebar_item_style do %>
-            <div class="flex items-center">
-              <%= render "icons/plus-circle" %>
-              <span class="ml-3">Add Entry</span>
-            </div>
-          <% end %>
-        </li>
-      </ul>
-      <ul class="pt-4 mt-4 space-y-2 border-t border-gray-100">
-        <li>
-          <%= link_to destroy_user_session_path, class: sidebar_item_style, data: { turbo_method: :delete } do %>
-            <%= render "icons/logout" %>
-            <span class="flex-1 ml-3 whitespace-nowrap">Logout</span>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</aside>
+		</div>
+	</div>
+</div>
