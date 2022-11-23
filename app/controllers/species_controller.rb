@@ -44,6 +44,6 @@ class SpeciesController < ApplicationController
 
   def species_params
     params.require(:species).permit(:ephitet, :name, :kingdom, :phylum, :classification, :order, :family, :location,
-                                    :description)
+                                    :description, galleries_attributes: %i[description image user_id])
   end
 end
