@@ -13,19 +13,15 @@
     <%= form.label :description %>
     <%= form.text_area :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_area :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
   <div>
     <%= form.label :image %>
-    <%= form.file_field :species_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"  %>
+    <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"  %>
   </div>
   <div>
     <%= form.text_field :species_id, value: Species.first %>
   </div>
   <div>
-    <%= form.text_field :user_id, value: current_user %>
+    <%= form.text_field :user_id, value: current_user.id %>
   </div>
   <div class="inline">
     <%= form.submit class: "rounded-lg mt-4 py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
