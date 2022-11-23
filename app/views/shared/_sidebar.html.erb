@@ -20,14 +20,30 @@
 
 		<!-- account navigation -->
 		<div class="flex flex-col items-center w-full mt-3 border-t border-white">
-			<%= link_to dashboard_path, class: sidebar_item_style do %>
-        <%= render "icons/account" %>
-				<span class="ml-2 text-sm font-medium">Account</span>
-      <% end %>
+      <% if current_user %>
 
-			<%= link_to destroy_user_session_path, class: sidebar_item_style, data: { turbo_method: :delete } do %>
-        <%= render "icons/logout" %>
-        <span class="ml-2 text-sm font-medium">Logout</span>
+        <%= link_to dashboard_path, class: sidebar_item_style do # !!! refactor path in the future !!! # %>
+          <%= render "icons/account" %>
+          <span class="ml-2 text-sm font-medium">Account</span>
+        <% end %>
+
+        <%= link_to destroy_user_session_path, class: sidebar_item_style, data: { turbo_method: :delete } do %>
+          <%= render "icons/logout" %>
+          <span class="ml-2 text-sm font-medium">Log Out</span>
+        <% end %>
+
+      <% else %>
+
+        <%= link_to new_user_session_path, class: sidebar_item_style do %>
+          <%= render "icons/login" %>
+          <span class="ml-2 text-sm font-medium">Log In</span>
+        <% end %>
+
+        <%= link_to new_user_registration_path, class: sidebar_item_style do %>
+          <%= render "icons/signup" %>
+          <span class="ml-2 text-sm font-medium">Sign Up</span>
+        <% end %>
+
       <% end %>
 		</div>
 	</div>
