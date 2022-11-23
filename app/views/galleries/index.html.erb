@@ -1,0 +1,9 @@
+<div class="w-full">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Galleries</h1>
+    <%= link_to 'New gallery', new_gallery_path, class: "rounded-lg py-3 px-5 bg-red-600 text-white block font-medium" %>
+  </div>
+  <div id="galleries" class="min-w-full">
+    <%= render @galleries %>
+  </div>
+</div>
