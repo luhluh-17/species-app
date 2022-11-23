@@ -1,0 +1,21 @@
+<div id="<%= dom_id publication %>">
+  <div>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.title %>
+    </p>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.summary %>
+    </p>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.url %>
+    </p>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.publication_date %>
+    </p>
+  </div>
+  <% if action_name != "show" %>
+    <%= link_to "Show this publication", publication, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this publication', edit_publication_path(publication), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -45,6 +45,8 @@
     <%= form.label :description %>
     <%= form.text_area :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
+  <%= render "species/galleries/form", species_form: form %>
+  <%= render "species/publications/form", species_form: form %>
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
   </div>

@@ -1,0 +1,16 @@
+<div>
+  <% species_model.publications.each do |publication| %>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.title %>
+    </p>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.summary %>
+    </p>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.url %>
+    </p>
+    <p class="mb-2 text-sm font-bold tracking-tight">
+      <%= publication.publiction_date %>
+    </p>
+  <% end %>
+</div>

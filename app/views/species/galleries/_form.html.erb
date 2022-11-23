@@ -1,0 +1,13 @@
+<%= species_form.fields_for :galleries, Gallery.new do | galleries_form | %>
+  <div>
+    <%= galleries_form.label :image %>
+    <%= galleries_form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"  %>
+  </div>
+  <div class="my-5">
+    <%= galleries_form.label :description %>
+    <%= galleries_form.text_area :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+  <div>
+    <%= galleries_form.text_field :user_id, value: current_user.id %>
+  </div>
+<% end %>
