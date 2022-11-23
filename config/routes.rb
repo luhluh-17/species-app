@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'api/species', to: 'dashboard#show'
   resources :species
   resources :galleries
+  resources :publications
   root 'pages#index'
 end
