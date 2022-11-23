@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SpeciesApp</title>
+    <title>ArkiBuhay</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,7 +13,7 @@
   <body class="flex flex-row bg-red-50">
     <%= render 'shared/sidebar' %>
     <main class="container">
-      <%= render 'layouts/flash' %>
+      <%= render 'shared/flash' %>
       <%= yield %>
     </main>
   </body>
