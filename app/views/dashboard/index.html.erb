@@ -2,8 +2,8 @@
   <%= render "searchbar" %>
   <div class="my-8">
     <h1>Total Number of Species: <%= @request["count"] %></h1>
-    <% @species.each do |specie| %>
-      <%= render "search-item", specie: specie %>
+    <% @species.each do |species| %>
+      <%= render "search-item", species: species %>
     <% end %>
   </div>
 </main>

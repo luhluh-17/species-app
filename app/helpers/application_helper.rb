@@ -16,11 +16,11 @@ module ApplicationHelper
     message
   end
 
-  def varnacular_name_formatter(specie)
-    if specie['vernacularNames'].empty?
+  def varnacular_name_formatter(species)
+    if species['vernacularNames'].empty?
       'Vernacular Name: N/A'
     else
-      "Vernacular Name: #{specie['vernacularNames'].first['vernacularName']}"
+      "Vernacular Name: #{species['vernacularNames'].first['vernacularName']}"
     end
   end
 end

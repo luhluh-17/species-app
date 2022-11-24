@@ -17,7 +17,7 @@ class SpeciesController < ApplicationController
     @species = Species.new(species_params)
 
     if @species.save
-      redirect_to @species, notice: "#{@species.name} was added in database"
+      redirect_to @species, notice: "#{@species.common_name} was added in database"
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class SpeciesController < ApplicationController
 
   def update
     if @species.update(species_params)
-      redirect_to @species, notice: "#{@species.name} has been updated"
+      redirect_to @species, notice: "#{@species.common_name} has been updated"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class SpeciesController < ApplicationController
 
   def destroy
     @species.destroy
-    redirect_to species_index_url, notice: "#{@species.name} has been deleted"
+    redirect_to species_index_url, notice: "#{@species.common_name} has been deleted"
   end
 
   private
@@ -43,7 +43,7 @@ class SpeciesController < ApplicationController
   end
 
   def species_params
-    params.require(:species).permit(:ephitet, :name, :kingdom, :phylum, :classification, :order, :family, :location,
+    params.require(:species).permit(:scientific_name, :common_name, :kingdom, :phylum, :classification, :order, :family, :genus, :location,
                                     :description,
                                     galleries_attributes: %i[description image user_id],
                                     publications_attributes: %i[title summary url publiction_date user_id])

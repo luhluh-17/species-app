@@ -1,4 +1,12 @@
 <div class="mx-auto md:w-2/3 w-full p-4">
-  <h1 class="font-bold text-4xl">New species</h1>
-  <%= render "form", species: @species %>
+  <% if current_user %>
+    <h1 class="font-bold text-4xl">New species</h1>
+    <%= render "form", species: @species %>
+  <% else %>
+    <h1 class="font-bold text-4xl">You must be logged in to add a new entry to the archive.</h1>
+    <div class="flex flex-row my-3 w-15">
+      <%= button_to 'Log In', new_user_session_path, class: "rounded-lg py-3 px-5 mr-3 bg-red-600 text-white font-medium" %>
+      <%= button_to 'Sign Up', new_user_registration_path, class: "rounded-lg py-3 px-5 bg-red-600 text-white font-medium" %>
+    </div>
+  <% end %>
 </div>
