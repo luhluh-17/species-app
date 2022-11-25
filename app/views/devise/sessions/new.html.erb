@@ -2,29 +2,30 @@
   <h2 class="font-bold text-4xl">Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="my-5">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full"%>
     </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+    <div class="my-5">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="my-5">
+        <%= f.check_box :remember_me, class: "appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-red-400 checked:border-red-500 checked:hover:bg-red-400 focus:outline-none mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" %>
+        <%= f.label :remember_me, class: " inline-block" %>
       </div>
     <% end %>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
+    <div class="inline">
+      <%= f.submit "Log In", class: "rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <div class="my-5">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
