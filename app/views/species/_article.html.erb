@@ -1,26 +1,31 @@
-<div>
-  <p class="font-normal text-gray-700 dark:text-gray-600 italic">
-    <%= @species.scientific_name(@species.genus, @species.species_name) %>
-  </p>
-  <p class="text-4xl font-bold tracking-tight text-gray">
-    <%= @species.common_name %>
-  </p>
-  <p class="text-xs text-gray-700 dark:text-gray-600 italic">
-    <%= classification_formatter(@species["kingdom"], @species["phylum"], @species["order"], @species["class"], @species["family"], @species["genus"]) %>
-  </p>
+<div class="flex justify-between">
+  <div class="w-full pr-4">
+    <p class="font-normal text-gray-700 dark:text-gray-600 italic">
+      <%= @species.scientific_name(@species.genus, @species.species_name) %>
+    </p>
+    <p class="text-4xl font-bold tracking-tight text-gray">
+      <%= @species.common_name %>
+    </p>
+    <p class="text-xs text-gray-700 dark:text-gray-600 italic">
+      <%= classification_formatter(@species["kingdom"], @species["phylum"], @species["order"], @species["class"], @species["family"], @species["genus"]) %>
+    </p>
+    <hr class="my-6 border-red-700">
+    <div>
+      <p class="text-3xl font-bold tracking-tight text-gray">
+        Description
+      </p>
+      <p class="font-normal text-gray-700 dark:text-gray-600 italic">
+        <%= @species.description %>
+      </p>
+    </div>
+  </div>
+  <% unless @species.galleries.empty? %>
+    <%= image_tag @species.galleries.first.image, class: "w-64 h-auto border-8 border-red-700"  %>
+  <% end %>
 </div>
 <hr class="my-6 border-red-700">
 <div>
-  <p class="text-3xl font-bold tracking-tight text-gray">
-    Description
-  </p>
-  <p class="font-normal text-gray-700 dark:text-gray-600 italic">
-    <%= @species.description %>
-  </p>
-</div>
-<hr class="my-6 border-red-700">
-<div>
-  <div class="flex flex-row justify-between items-center">
+  <div class="flex justify-between items-center">
     <p class="text-3xl font-bold tracking-tight text-gray">
       Gallery
     </p>
@@ -32,7 +37,7 @@
 </div>
 <hr class="my-6 border-red-700">
 <div>
-  <div class="flex flex-row justify-between items-center">
+  <div class="flex justify-between items-center">
     <p class="text-3xl font-bold tracking-tight text-gray">
       Publication
     </p>
