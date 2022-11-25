@@ -46,6 +46,6 @@ class SpeciesController < ApplicationController
     params.require(:species).permit(:scientific_name, :common_name, :kingdom, :phylum, :classification, :order, :family, :genus, :location,
                                     :description,
                                     galleries_attributes: %i[description image user_id],
-                                    publications_attributes: %i[title summary url publiction_date user_id])
+                                    publications_attributes: %i[title summary url publication_date user_id])
   end
 end

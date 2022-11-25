@@ -12,13 +12,10 @@
     <%= publications_form.text_field :url, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div class="my-5">
-    <%= publications_form.label :publiction_date %>
-    <%= publications_form.date_field :publiction_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= publications_form.label :publication_date %>
+    <%= publications_form.date_field :publication_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div>
-    <!-- remove comment tag if hidden field does not work
-    <%= publications_form.text_field :user_id, value: current_user.id %>
-    -->
     <%= publications_form.hidden_field :user_id, value: current_user.id %>
   </div>
 <% end %>
