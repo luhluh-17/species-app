@@ -1,11 +1,11 @@
 <div class="mx-auto md:w-2/3 w-full p-4">
-  <h2 class="font-bold text-4xl">Log in</h2>
+  <h2 class="font-bold text-4xl">Log In</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <div class="my-5">
       <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full"%>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <div class="my-5">
