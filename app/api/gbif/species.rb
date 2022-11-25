@@ -8,7 +8,10 @@ module Gbif
         endpoint: 'species/search',
         args: {
           datasetKey: 'd7dddbf4-2cf0-4f39-9b2a-bb099caae36c',
-          q: 'philippines'
+          kingdom: 'animalia',
+          language: 'en',
+          q: 'philippines',
+          limit: 1000
         }
       )
     end
