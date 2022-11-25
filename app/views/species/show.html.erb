@@ -2,10 +2,9 @@
   <div class="mx-auto">
     <%= render "species/article" %>
 
-    
-    <%= link_to 'Edit this species', edit_species_path(@species), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this species', edit_species_path(@species), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this species', species_path(@species), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to 'Destroy this species', species_path(@species), method: :delete, class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     </div>
   </div>
 </div>
