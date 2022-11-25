@@ -9,7 +9,7 @@ class PublicationsController < ApplicationController
 
   def new
     @publication = Publication.new
-    @species_id = params[:species_id]
+    @publication.species_id = params[:species_id]
   end
 
   def edit; end
