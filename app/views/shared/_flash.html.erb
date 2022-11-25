@@ -1,7 +1,8 @@
 <div class="m-5 alert-custom">
   <% if notice %>
     <%= render "shared/notice" %>
-  <% elsif alert %>
+  <% end %>
+  <% if alert %>
     <%= render "shared/alert" %>
   <% end %>
 </div>
