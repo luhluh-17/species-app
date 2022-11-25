@@ -7,13 +7,21 @@ module Gbif
         http_method: 'get',
         endpoint: 'species/search',
         args: {
-          q: 'philippine eagle'
+          datasetKey: 'd7dddbf4-2cf0-4f39-9b2a-bb099caae36c',
+          q: 'philippines'
         }
       )
     end
 
     def self.search(name)
-      Client.call(http_method: 'get', endpoint: 'species/search', args: { name: })
+      Client.call(
+        http_method: 'get',
+        endpoint: 'species/search',
+        args: {
+          datasetKey: 'd7dddbf4-2cf0-4f39-9b2a-bb099caae36c',
+          name:
+        }
+      )
     end
 
     def self.show(id)
