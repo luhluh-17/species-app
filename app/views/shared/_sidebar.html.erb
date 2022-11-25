@@ -13,6 +13,11 @@
       <% end %>
 
       <% if current_user %>
+        <%= link_to species_path, class: sidebar_item_style do %>
+          <%= render "icons/search" %>
+          <span class="ml-2 text-sm font-medium">Species</span>
+        <% end %>
+
         <%= link_to new_species_path, class: sidebar_item_style do %>
           <%= render "icons/plus-circle" %>
           <span class="ml-2 text-sm font-medium">Add Entry</span>
