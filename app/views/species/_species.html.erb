@@ -1,4 +1,4 @@
-<div id="<%= dom_id species %>" class="flex flex-row justify-between block w-full p-6 mt-4 border-gray-200 rounded-lg shadow-sm bg-white border-white-700 hover:bg-red-100">
+<div id="<%= dom_id species %>" class="flex flex-row justify-between items-centergit st block w-full p-6 mt-4 border-gray-200 rounded-lg shadow-sm bg-white border-white-700 hover:bg-red-100">
   <div >
     <p class="mb-2 text-xl font-bold tracking-tight text-gray">
       <%= species.scientific_name %>
@@ -11,12 +11,10 @@
     </p>
   </div>
 
-  <div >
+  <div class="flex flex-row">
     <% if action_name != "show" %>
-      <%= link_to "View", species, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= link_to 'Edit', edit_species_path(species), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "View", species, class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+      <%= link_to 'Edit', edit_species_path(species), class: "text-center rounded-lg py-3 px-5 ml-2 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     <% end %>
   </div>
 </div>
-
-<hr class="mt-6">
