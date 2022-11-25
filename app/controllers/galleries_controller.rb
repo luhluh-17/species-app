@@ -18,7 +18,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
 
     if @gallery.save
-      redirect_to @gallery, notice: 'Gallery was successfully created.'
+      redirect_to species_path(id: @gallery.species_id), notice: 'Gallery was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
