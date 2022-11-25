@@ -1,16 +1,18 @@
-<div>
-  <% species_model.publications.each do |publication| %>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= publication.title %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= publication.summary %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= publication.url %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= publication.publication_date %>
-    </p>
+<div id="publications" class="min-w-full mt-4">
+  <% @species.publications.each do |publication| %>
+    <div class="px-8 py-2 bg-red-100 mb-4">
+      <div class="flex flex-row justify-between items-center">
+        <p class="mb-2 text-2xl font-bold tracking-tight">
+          <%= publication.title %>
+        </p>
+        <p class="text-sm tracking-tight">
+          <%= publication.publication_date %>
+        </p>
+      </div>
+      <p class="mb-2 text-sm tracking-tight">
+        <%= publication.summary %>
+      </p>
+      <%= link_to "Vist Site", publication.url, target: :_blank, class: "text-blue-500" %>
+    </div>
   <% end %>
 </div>
