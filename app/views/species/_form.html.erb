@@ -13,7 +13,7 @@
   <% end %>
   <%= render 'selectfield', species_form: form, label: :kingdom, field: :kingdom, option_list: options_for_select(kingdom_options) %>
   <%= render 'selectfield', species_form: form, label: :phylum, field: :phylum, option_list: options_for_select(phylum_options) %>
-  <%= render 'selectfield', species_form: form, label: 'Class', field: :class, option_list: options_for_select(class_options) %>
+  <%= render 'selectfield', species_form: form, label: 'Class', field: :classification, option_list: options_for_select(class_options) %>
   <%= render 'selectfield', species_form: form, label: :order, field: :order, option_list: options_for_select(order_options) %>
   <%= render 'selectfield', species_form: form, label: :family, field: :family, option_list: options_for_select(family_options) %>
   <%= render 'selectfield', species_form: form, label: :genus, field: :genus, option_list: options_for_select(genus_options) %>
