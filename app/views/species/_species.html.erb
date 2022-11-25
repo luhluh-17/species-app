@@ -14,7 +14,9 @@
   <div class="flex flex-row">
     <% if action_name != "show" %>
       <%= link_to "View", species, class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
-      <%= link_to 'Edit', edit_species_path(species), class: "text-center rounded-lg py-3 px-5 ml-2 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+      <% if current_user %>
+        <%= link_to 'Edit', edit_species_path(species), class: "text-center rounded-lg py-3 px-5 ml-2 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+      <% end %>
     <% end %>
   </div>
 </div>
