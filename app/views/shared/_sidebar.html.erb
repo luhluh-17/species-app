@@ -28,8 +28,7 @@
 		<!-- account navigation -->
 		<div class="flex flex-col items-center w-full mt-3 border-t border-white">
       <% if current_user %>
-        <!-- update path !!! -->
-        <%= link_to dashboard_path, class: sidebar_item_style do %>
+        <%= link_to profile_path, class: sidebar_item_style do %>
           <%= render "icons/account" %>
           <span class="ml-2 text-sm font-medium">Account</span>
         <% end %>

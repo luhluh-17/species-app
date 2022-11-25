@@ -39,7 +39,9 @@
     <p class="text-3xl font-bold tracking-tight text-gray">
       Publication
     </p>
-    <%= link_to 'Upload Publication', new_publication_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+    <% if current_user %>
+        <%= link_to 'Upload Publication', new_publication_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+    <% end %>
 </div>
 
 <hr class="my-6 border-red-700">

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#index'
   get 'api/species', to: 'dashboard#show'
+  get 'profile', to: 'profile#index'
   resources :species
   resources :galleries
   resources :publications
