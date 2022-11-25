@@ -1,19 +1,22 @@
 <%= form_with(model: species, class: "contents") do |form| %>
   <% if species.errors.any? %>
     <div id="error_explanation" class="flex items-center absolute top-5 right-5 p-4 w-full max-w-xs text-white bg-red-400 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800">
-      
       <ul>
         <% species.errors.each do |error| %>
           <li class="ml-3 text-sm font-normal"><%= error.full_message %></li>
         <% end %>
       </ul>
-
       <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-red-400 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close" onclick="this.parentElement.style.display='none'">
         <%= render "icons/close" %>
       </button>
     </div>
   <% end %>
-
+  <%= render 'selectfield', species_form: form, label: :kingdom, field: :kingdom, option_list: options_for_select(kingdom_options) %>
+  <%= render 'selectfield', species_form: form, label: :phylum, field: :phylum, option_list: options_for_select(phylum_options) %>
+  <%= render 'selectfield', species_form: form, label: 'Class', field: :class, option_list: options_for_select(class_options) %>
+  <%= render 'selectfield', species_form: form, label: :order, field: :order, option_list: options_for_select(order_options) %>
+  <%= render 'selectfield', species_form: form, label: :family, field: :family, option_list: options_for_select(family_options) %>
+  <%= render 'selectfield', species_form: form, label: :genus, field: :genus, option_list: options_for_select(genus_options) %>
   <div class="my-5">
     <%= form.label :scientific_name %>
     <%= form.text_field :scientific_name, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
@@ -23,30 +26,6 @@
     <%= form.text_field :common_name, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div class="my-5">
-    <%= form.label :kingdom %>
-    <%= form.text_field :kingdom, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :phylum %>
-    <%= form.text_field :phylum, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :classification %>
-    <%= form.text_field :classification, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :order %>
-    <%= form.text_field :order, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :family %>
-    <%= form.text_field :family, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-    <div class="my-5">
-    <%= form.label :genus %>
-    <%= form.text_field :genus, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
     <%= form.label :location %>
     <%= form.text_field :location, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
@@ -54,11 +33,9 @@
     <%= form.label :description %>
     <%= form.text_area :description, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-
   <!-- commented out, i think gallery and publication should be optional, especially with new entries -->
   <%# <%= render "species/galleries/form", species_form: form %>
   <%# <%= render "species/publications/form", species_form: form %>
-  
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
