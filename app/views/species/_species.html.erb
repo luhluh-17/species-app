@@ -1,41 +1,22 @@
-<div id="<%= dom_id species %>">
-  <div>
-    <p class="mb-2 text-sm font-bold tracking-tight">
+<div id="<%= dom_id species %>" class="flex flex-row justify-between block w-full p-6 mt-4 border-gray-200 rounded-lg shadow-sm bg-white border-white-700 hover:bg-red-100">
+  <div >
+    <p class="mb-2 text-xl font-bold tracking-tight text-gray">
       <%= species.scientific_name %>
     </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.common_name %>
+    <p class="font-normal text-gray-700 dark:text-gray-600">
+      <%= classification_formatter(species["kingdom"], species["phylum"], species["order"], species["class"], species["family"], species["genus"]) %>
     </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.kingdom %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.phylum %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.classification %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.order %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.family %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.genus %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.location %>
-    </p>
-    <p class="mb-2 text-sm font-bold tracking-tight">
-      <%= species.description %>
+    <p class="font-normal text-gray-700 dark:text-gray-600">
+      Common Name: <%= species.common_name %>
     </p>
   </div>
-  <%= render "species/galleries/gallery", species_model: species %>
-  <%= render "species/publications/publication", species_model: species %>
-  <% if action_name != "show" %>
-    <%= link_to "View", species, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit', edit_species_path(species), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+
+  <div >
+    <% if action_name != "show" %>
+      <%= link_to "View", species, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to 'Edit', edit_species_path(species), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <% end %>
+  </div>
 </div>
+
+<hr class="mt-6">
