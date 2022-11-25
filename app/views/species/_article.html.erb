@@ -1,6 +1,6 @@
 <div>
   <p class="font-normal text-gray-700 dark:text-gray-600 italic">
-    <%= @species.scientific_name %>
+    <%= @species.scientific_name(@species.genus, @species.species_name) %>
   </p>
   <p class="text-4xl font-bold tracking-tight text-gray">
     <%= @species.common_name %>

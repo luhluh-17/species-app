@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_104227) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_210720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,8 +66,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_104227) do
   end
 
   create_table "species", force: :cascade do |t|
-    t.string "genus"
-    t.string "scientific_name"
+    t.string "genus", default: "N/A"
+    t.string "species_name"
     t.string "common_name"
     t.string "location"
     t.text "description"
