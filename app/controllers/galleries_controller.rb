@@ -9,6 +9,7 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
+    @species_id = params[:species_id]
   end
 
   def edit; end

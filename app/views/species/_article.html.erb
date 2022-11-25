@@ -1,0 +1,27 @@
+<div>
+    <p class="text-4xl font-bold tracking-tight text-gray">
+      <%= @species.common_name %>
+    </p>
+    <p class="font-normal text-gray-700 dark:text-gray-600 italic">
+      <%= @species.scientific_name %>
+    </p>
+
+    <p class="text-xs text-gray-700 dark:text-gray-600 italic">
+      <%= classification_formatter(@species["kingdom"], @species["phylum"], @species["order"], @species["class"], @species["family"], @species["genus"]) %>
+    </p>
+</div>
+
+<hr class="my-6 border-red-700">
+
+<div>
+    <p class="text-3xl font-bold tracking-tight text-gray">
+      Description
+    </p>
+    <p class="font-normal text-gray-700 dark:text-gray-600 italic">
+      <%= @species.description %>
+    </p>
+</div>
+
+<%= link_to 'New Gallery', new_gallery_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+
+
