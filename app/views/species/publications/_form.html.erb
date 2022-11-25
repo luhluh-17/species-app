@@ -1,19 +1,19 @@
 <%= species_form.fields_for :publications, Publication.new do | publications_form | %>
   <div class="my-5">
     <%= publications_form.label :title %>
-    <%= publications_form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= publications_form.text_field :title, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div class="my-5">
     <%= publications_form.label :summary %>
-    <%= publications_form.text_area :summary, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= publications_form.text_area :summary, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div class="my-5">
     <%= publications_form.label :url, "URL" %>
-    <%= publications_form.text_field :url, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= publications_form.text_field :url, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div class="my-5">
     <%= publications_form.label :publication_date %>
-    <%= publications_form.date_field :publication_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= publications_form.date_field :publication_date, class: "block shadow rounded-md border border-gray-200 focus:ring-red-400 focus:border-red-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div>
     <%= publications_form.hidden_field :user_id, value: current_user.id %>
