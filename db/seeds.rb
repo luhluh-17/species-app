@@ -31,7 +31,7 @@ species1 = Species.new(
 )
 species1.save
 
-species2 = Species.create(
+species2 = Species.new(
   kingdom: 'Animalia',
   phylum: 'Chordata',
   classification: 'Mammalia',
@@ -45,7 +45,7 @@ species2 = Species.create(
 )
 species2.save
 
-species3 = Species.create(
+species3 = Species.new(
   kingdom: 'Animalia',
   phylum: 'Chordata',
   classification: 'Mammalia',
@@ -99,25 +99,19 @@ Species.create(
 )
 
 Publication.create(
-  title: 'Birds of the World: Recommended English Names',
-  summary: 'This book provides the first standardized English-language nomenclature for all living birds of the world. While previous checklists, including those by Sibley and Monroe, Clements, and Howard and Moore, were primarily taxonomic works, Birds of the World provides English-language names based on the rules and principles developed by leading ornithologists worldwide and endorsed by members of the preeminent International Ornithological Congress.',
-  url: 'https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=175560#null',
-  species_id: species1.id,
-  user_id: user1.id
-)
-
-Publication.create(
   title: 'Birds of the World: Recommended English Names - Gill, Frank, and Minturn Wright',
   summary: 'This book provides the first standardized English-language nomenclature for all living birds of the world. While previous checklists, including those by Sibley and Monroe, Clements, and Howard and Moore, were primarily taxonomic works, Birds of the World provides English-language names based on the rules and principles developed by leading ornithologists worldwide and endorsed by members of the preeminent International Ornithological Congress.',
   url: 'https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=175560#null',
+  publication_date: Time.now - 432.days,
   species_id: species1.id,
   user_id: user1.id
 )
 
 Publication.create(
   title: 'Handbook of the Mammals of the World. Volume 3. Primates - 	Mittermeier, Rusell A., Anthony B. Rylands, and Don E. Wilson, eds.',
-  summary: 'Primates counts more than 470 of them: 138 species of prosimians - the lemurs, lorises, pottos and tarsiers in Africa and Asia; 157 species of monkeys in the New World tropics; another 158 monkeys in the Old World tropics; and 25 apes, 19 of them gibbons along with six ...',
+  summary: 'Primates counts more than 470 of them: 138 species of prosimians - the lemurs, lorises, pottos and tarsiers in Africa and Asia; 157 species of monkeys in the New World tropics; another 158 monkeys in the Old World tropics; and 25 apes, 19 of them gibbons along with six',
   url: 'https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=944114#null',
+  publication_date: Time.now - 88.days,
   species_id: species2.id,
   user_id: user1.id
 )
@@ -126,6 +120,7 @@ Publication.create(
   title: 'Mammal Species of the World: A Taxonomic and Geographic Reference, 2nd ed., 3rd printing - Wilson, Don E., and DeeAnn M. Reeder, eds.',
   summary: 'This is the 3rd edition of the now classic and official (endorsed by the American Society of Mammalogists), compendium of the living or recently extinct mammal species of the world. This edition is issued in a 2-volume set (the 2nd volume for Rodentia only), including 9,373 references and an index of scientific and common names.',
   url: 'https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=625123#null',
+  publication_date: Time.now - 57.days,
   species_id: species3.id,
   user_id: user1.id
 )
