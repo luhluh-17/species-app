@@ -9,7 +9,7 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
-    @species_id = params[:species_id]
+    @gallery.species_id = params[:species_id]
   end
 
   def edit; end
@@ -18,7 +18,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
 
     if @gallery.save
-      redirect_to @gallery, notice: 'Gallery was successfully created.'
+      redirect_to species_path(id: @gallery.species_id), notice: 'Gallery was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

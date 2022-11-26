@@ -1,0 +1,28 @@
+<div class="mx-auto md:w-5/6 w-full">
+  <hr class="my-6 border-red-700">
+  <div>
+    <p class="text-3xl font-bold tracking-tight text-gray">
+      My Publication
+    </p>
+    <div id="publications" class="min-w-full mt-4">
+      <% current_user.publications.each do |publication| %>
+        <%= link_to publication do %>
+          <div class="p-6 mt-4 border-gray-200 rounded-lg shadow-sm bg-white border-white-700 hover:bg-red-100">
+            <div class="flex flex-row justify-between items-center">
+              <p class="mb-2 text-2xl font-bold tracking-tight">
+                <%= publication.title %>
+              </p>
+              <p class="text-sm tracking-tight">
+                <%= publication.publication_date %>
+              </p>
+            </div>
+            <p class="mb-2 text-sm tracking-tight">
+              <%= publication.summary %>
+            </p>
+            <%= link_to "Vist Site", publication.url, target: :_blank, class: "text-blue-500" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

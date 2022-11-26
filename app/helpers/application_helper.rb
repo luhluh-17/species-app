@@ -18,9 +18,9 @@ module ApplicationHelper
 
   def varnacular_name_formatter(species)
     if species['vernacularNames'].empty?
-      'Vernacular Name: N/A'
+      species['scientificName']
     else
-      "Vernacular Name: #{species['vernacularNames'].first['vernacularName']}"
+      "Common Name: #{species['vernacularNames'].first['vernacularName']}"
     end
   end
 end

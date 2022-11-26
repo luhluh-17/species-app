@@ -1,0 +1,6 @@
+<%= form_with(url: root_path, method: :get) do |form| %>
+  <div class="flex space-x-3 my-5 mt-8">
+    <%= form.text_field :query, class: "w-full py-3 px-4 rounded ring-0 focus:ring-4 focus:ring-red-100 focus:shadow-none focus:border-red-500 focus:outline-note" %>
+    <%= form.submit "Search", class: "w-40 text-center rounded-lg py-3 px-5 bg-red-600 text-white block font-medium" %>
+  </div>
+<% end %>

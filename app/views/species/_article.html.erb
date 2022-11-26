@@ -1,47 +1,55 @@
-<div>
+<div class="flex justify-between">
+  <div class="w-full pr-4">
+    <p class="font-normal text-gray-700 dark:text-gray-600 italic">
+      <%= @species.scientific_name(@species.genus, @species.species_name) %>
+    </p>
     <p class="text-4xl font-bold tracking-tight text-gray">
       <%= @species.common_name %>
     </p>
-    <p class="font-normal text-gray-700 dark:text-gray-600 italic">
-      <%= @species.scientific_name %>
-    </p>
-
     <p class="text-xs text-gray-700 dark:text-gray-600 italic">
       <%= classification_formatter(@species["kingdom"], @species["phylum"], @species["order"], @species["class"], @species["family"], @species["genus"]) %>
     </p>
+  </div>
+  <%= render 'button-group' %>
 </div>
-
 <hr class="my-6 border-red-700">
-
-<div>
+<div class="flex justify-between">
+  <div>
     <p class="text-3xl font-bold tracking-tight text-gray">
       Description
     </p>
     <p class="font-normal text-gray-700 dark:text-gray-600 italic">
       <%= @species.description %>
     </p>
+  </div>
+  <% unless @species.galleries.empty? %>
+    <%= link_to url_for(@species.galleries.first.image), target: "_blank" do %>
+      <%= image_tag @species.galleries.first.image, class: "w-64 h-auto rounded border-8 border-red-700"  %>
+    <% end %>
+  <% end %>
 </div>
-
 <hr class="my-6 border-red-700">
-
-<div class="flex flex-row justify-between items-center">
+<div>
+  <div class="flex justify-between items-center">
     <p class="text-3xl font-bold tracking-tight text-gray">
       Gallery
     </p>
     <% if current_user %>
-        <%= link_to 'Upload Photo', new_gallery_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+      <%= link_to 'Upload Photo', new_gallery_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     <% end %>
+  </div>
+  <%= render 'gallery' %>
 </div>
-
 <hr class="my-6 border-red-700">
-
-<div class="flex flex-row justify-between items-center">
+<div>
+  <div class="flex justify-between items-center">
     <p class="text-3xl font-bold tracking-tight text-gray">
       Publication
     </p>
     <% if current_user %>
-        <%= link_to 'Upload Publication', new_publication_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+      <%= link_to 'Upload Publication', new_publication_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     <% end %>
+  </div>
+  <%= render 'publication' %>
 </div>
-
 <hr class="my-6 border-red-700">

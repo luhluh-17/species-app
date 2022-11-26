@@ -9,6 +9,7 @@ class PublicationsController < ApplicationController
 
   def new
     @publication = Publication.new
+    @publication.species_id = params[:species_id]
   end
 
   def edit; end
@@ -17,7 +18,7 @@ class PublicationsController < ApplicationController
     @publication = Publication.new(publication_params)
 
     if @publication.save
-      redirect_to @publication, notice: 'Publication was successfully created.'
+      redirect_to species_path(id: @publication.species_id), notice: 'Publication was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,6 +44,6 @@ class PublicationsController < ApplicationController
   end
 
   def publication_params
-    params.permit(:title, :summary, :url, :publication_date, :species_id, :user_id)
+    params.require(:publication).permit(:title, :summary, :url, :publication_date, :species_id, :user_id)
   end
 end
