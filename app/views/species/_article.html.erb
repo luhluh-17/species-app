@@ -38,7 +38,7 @@
       <%= link_to 'Upload Photo', new_gallery_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     <% end %>
   </div>
-  <%= render 'species/galleries/gallery' %>
+  <%= render 'gallery' %>
 </div>
 <hr class="my-6 border-red-700">
 <div>
@@ -50,6 +50,6 @@
       <%= link_to 'Upload Publication', new_publication_path(@species, :species_id => @species.id), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
     <% end %>
   </div>
-  <%= render 'species/publications/publication' %>
+  <%= render 'publication' %>
 </div>
 <hr class="my-6 border-red-700">
