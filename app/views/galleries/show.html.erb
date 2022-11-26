@@ -1,8 +1,6 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="flex flex-col w-full">
-    <% if @gallery.user_id == current_user.id %>
-      <%= render "button-group" %>
-    <% end %>
-    <%= render @gallery %>
-  </div>
+<div class="mx-auto md:w-2/3 w-full flex flex-col">
+  <% if @gallery.user_id == current_user.id %>
+    <%= render "button-group" %>
+  <% end %>
+  <%= render @gallery %>
 </div>
