@@ -3,7 +3,7 @@
     <%= render 'icons/edit' %>
     Edit
   <% end %>
-  <%= button_to species_path(@species), method: :delete, class: "inline-flex items-center py-2 px-4 text-sm font-medium rounded-r-md border focus:z-10 focus:ring-2 bg-red-600 border-red-800 text-white hover:text-white hover:bg-red-600 focus:ring-red-500 focus:text-white" do %>
+  <%= button_to species_path(@species), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "inline-flex items-center py-2 px-4 text-sm font-medium rounded-r-md border focus:z-10 focus:ring-2 bg-red-600 border-red-800 text-white hover:text-white hover:bg-red-600 focus:ring-red-500 focus:text-white" do %>
     <%= render 'icons/delete' %>
     Delete
   <% end %>
