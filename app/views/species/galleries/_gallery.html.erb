@@ -1,5 +1,7 @@
 <div id="galleries" class="min-w-full mt-4 grid grid-cols-6 gap-6">
   <% @species.galleries.each do |gallery| %>
-    <%= image_tag gallery.image, class: "w-32 h-32"  %>
+    <%= link_to url_for(gallery.image), target: "_blank" do %>
+      <%= image_tag gallery.image, class: "w-32 h-32"  %>
+    <% end %>
   <% end %>
 </div>
