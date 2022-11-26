@@ -1,6 +1,14 @@
-<div id="<%= dom_id gallery %>" class="flex gap-4">
-  <%= image_tag gallery.image, class: "w-6/12 h-auto" %>
-  <p class="mb-2 text-sm font-bold tracking-tight">
-    <%= gallery.description %>
-  </p>
+<div id="<%= dom_id gallery %>" class="flex gap-4 justify-between mt-4">
+  <div>
+    <p class="text-3xl font-bold tracking-tight text-gray">
+      Description
+    </p>
+    <p class="font-normal text-gray-700 dark:text-gray-600 italic">
+      <%= @gallery.description %>
+    </p>
+  </div>
+  <%= link_to url_for(@gallery.image), target: "_blank" do %>
+    <%= image_tag @gallery.image, class: "w-64 h-auto border-8 border-red-700"  %>
+  <% end %>
 </div>
+<hr class="my-6 border-red-700">

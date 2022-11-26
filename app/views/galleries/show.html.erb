@@ -1,9 +1,6 @@
 <div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
+  <div class="flex flex-col w-full">
+    <%= render "button-group" %>
     <%= render @gallery %>
-    <%= link_to 'Edit', edit_gallery_path(@gallery), class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Delete', gallery_path(@gallery), method: :delete, class: "text-center rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
-    </div>
   </div>
 </div>
