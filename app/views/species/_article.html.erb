@@ -24,7 +24,7 @@
   </div>
   <% unless @species.galleries.empty? %>
     <%= link_to url_for(@species.galleries.first.image), target: "_blank" do %>
-      <%= image_tag @species.galleries.first.image, class: "w-64 h-auto border-8 border-red-700"  %>
+      <%= image_tag @species.galleries.first.image, class: "w-64 h-auto rounded border-8 border-red-700"  %>
     <% end %>
   <% end %>
 </div>
