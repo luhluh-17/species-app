@@ -7,7 +7,7 @@
     <div id="publications" class="min-w-full mt-4">
       <% current_user.publications.each do |publication| %>
         <%= link_to publication do %>
-          <div class="px-8 py-2 bg-red-100 mb-4">
+          <div class="p-6 mt-4 border-gray-200 rounded-lg shadow-sm bg-white border-white-700 hover:bg-red-100">
             <div class="flex flex-row justify-between items-center">
               <p class="mb-2 text-2xl font-bold tracking-tight">
                 <%= publication.title %>
