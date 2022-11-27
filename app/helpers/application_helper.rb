@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def sidebar_item_style
-    'flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-red-700'
-  end
-
   def classification_formatter(*args)
     message = 'Taxonomic Rank: '
     list = args.compact
