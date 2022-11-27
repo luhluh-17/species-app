@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'api/species', to: 'dashboard#show'
   get 'profile', to: 'profile#index'
   resources :species
-  resources :galleries
-  resources :publications
+  resources :galleries, except: :index
+  resources :publications, except: :index
   root 'pages#index'
 end
