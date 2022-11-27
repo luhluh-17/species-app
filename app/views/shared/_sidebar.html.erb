@@ -1,55 +1,25 @@
-<div class="flex flex-col sticky top-0 items-center w-64 h-screen overflow-hidden text-white bg-red-800 rounded">
-
-	<%= link_to root_path, class: "flex items-center w-full px-3 mt-3" do %>
+<div class="flex flex-col sticky top-0 items-center w-64 h-screen overflow-hidden text-white bg-red-800">
+  <%= link_to root_path, class: "flex items-center w-full px-3 pl-4 mt-3" do %>
     <span class="ml-2 text-2xl font-semibold">ArkiBuhay</span>
   <% end %>
-
-	<div class="w-full px-2">
-		<!-- species navigation -->
-		<div class="flex flex-col items-center w-full mt-3 border-t border-white">
-			<%= link_to dashboard_path, class: sidebar_item_style do %>
-				<%= render "icons/dashboard" %>
-				<span class="ml-2 text-sm font-medium">Dashboard</span>
-      <% end %>
-
-
-      <%= link_to species_index_path, class: sidebar_item_style do %>
-        <%= render "icons/search" %>
-        <span class="ml-2 text-sm font-medium">Species</span>
-      <% end %>
-
+  <div class="flex flex-col justify-between w-full h-full px-2 ">
+    <!-- species navigation -->
+    <div class="flex flex-col items-center w-full mt-3 border-t border-white">
+      <%= render "shared/sidebar-items", path: dashboard_path, icon: "dashboard", text: "Dashboard", data: {} %>
+      <%= render "shared/sidebar-items", path: species_index_path, icon: "search", text: "Species", data: {} %>
       <% if current_user %>
-        <%= link_to new_species_path, class: sidebar_item_style do %>
-          <%= render "icons/plus-circle" %>
-          <span class="ml-2 text-sm font-medium">Add Entry</span>
-        <% end %>
+        <%= render "shared/sidebar-items", path: new_species_path, icon: "plus-circle", text: "Add Entry", data: {} %>
       <% end %>
-		</div>
-
-		<!-- account navigation -->
-		<div class="flex flex-col items-center w-full mt-3 border-t border-white">
+    </div>
+    <!-- account navigation -->
+    <div class="flex flex-col items-center w-full mt-3 mb-3 border-t border-white">
       <% if current_user %>
-        <%= link_to profile_path, class: sidebar_item_style do %>
-          <%= render "icons/account" %>
-          <span class="ml-2 text-sm font-medium">Account</span>
-        <% end %>
-
-        <%= link_to destroy_user_session_path, class: sidebar_item_style, data: { turbo_method: :delete } do %>
-          <%= render "icons/logout" %>
-          <span class="ml-2 text-sm font-medium">Log Out</span>
-        <% end %>
+        <%= render "shared/sidebar-items", path: profile_path, icon: "account", text: "Account", data: {} %>
+        <%= render "shared/sidebar-items", path: destroy_user_session_path, icon: "logout", text: "Log Out", data: { turbo_method: :delete } %>
       <% else %>
-        <%= link_to new_user_session_path, class: sidebar_item_style do %>
-          <%= render "icons/login" %>
-          <span class="ml-2 text-sm font-medium">Log In</span>
-        <% end %>
-
-        <%= link_to new_user_registration_path, class: sidebar_item_style do %>
-          <%= render "icons/signup" %>
-          <span class="ml-2 text-sm font-medium">Sign Up</span>
-        <% end %>
+        <%= render "shared/sidebar-items", path: new_user_session_path, icon: "login", text: "Log In", data: {} %>
+        <%= render "shared/sidebar-items", path: new_user_registration_path, icon: "signup", text: "Sign Up", data: {} %>
       <% end %>
-		</div>
-	</div>
-
+    </div>
+  </div>
 </div>
