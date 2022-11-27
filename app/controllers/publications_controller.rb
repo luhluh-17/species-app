@@ -34,7 +34,7 @@ class PublicationsController < ApplicationController
 
   def destroy
     @publication.destroy
-    redirect_to publications_url, notice: 'Publication was successfully deleted.'
+    redirect_to profile_path, notice: 'Publication was successfully deleted.'
   end
 
   private

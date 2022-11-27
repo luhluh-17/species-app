@@ -34,7 +34,7 @@ class GalleriesController < ApplicationController
 
   def destroy
     @gallery.destroy
-    redirect_to galleries_url, notice: 'Gallery was successfully deleted'
+    redirect_to profile_path, notice: 'Gallery was successfully deleted'
   end
 
   private
