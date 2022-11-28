@@ -2,7 +2,7 @@
 An application built with Ruby on Rails 7 that archives and provides public data on species found in the Philippines.
 
 ### 💻 Features:
-* Implemented account registration, session, and email authentication using the Devise gem.
+* Implemented account registration, session, and email confirmation using the Devise gem.
 * Added the ability for users to retrieve species data via the GBIF Species API.
 * Utilized Rails Active Storage to upload and store images inside the application.
 * Provide the registered users the ability to enter new species data and its corresponding publications and galleries using ActionController.
